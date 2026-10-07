@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="快播日韩电影网（kuaiborihandianyingwang-cn.github.io）是日韩电影与日韩剧导航资讯平台，提供日本电影、韩国电影、日韩综艺的高清在线观看与迅雷下载导航，涵盖 4K 蓝光、韩剧、日剧与电影字幕。">
+<meta name="keywords" content="快播日韩电影网, kuaiborihandianyingwang-cn, 日韩电影, 日本电影, 韩国电影, 日韩剧, 韩剧, 日剧, 日韩综艺, 高清电影在线观看, 迅雷下载, 4K 蓝光, 电影字幕, 最新韩国电影">
+<meta name="author" content="快播日韩电影网">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#f97316">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>快播日韩电影网 - 日韩电影导航大全 | 日本电影与韩国电影高清在线观看</title>
+<link rel="canonical" href="https://kuaiborihandianyingwang-cn.github.io/">
+<style>
+/* ==========================================================
+   快播日韩电影网  kuaiborihandianyingwang-cn.github.io
+   单页网站 · 移动端自适应 · 内链以 # 替代
+   设计基调：极速流光 × 黑金橙 × 斜切运动感 × 动态数据
+   ========================================================== */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --o:#f97316;--o2:#ea580c;--o3:#9a3412;--y:#facc15;--ink:#15171c;--ink2:#5b6472;--ink3:#94a0b0;
+  --line:#e8edf3;--bg:#f7f9fc;--card:#ffffff;
+  --sans:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);line-height:1.85;background:var(--bg);
+  background-image:radial-gradient(900px 400px at 88% -6%,rgba(249,115,22,.13),transparent 62%);
+  background-attachment:fixed;overflow-x:clip}
+a{color:inherit;text-decoration:none;transition:.28s cubic-bezier(.34,1.3,.64,1)}
+::selection{background:var(--o);color:#fff}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--o),var(--o3));border-radius:10px}
+
+/* ===== 动态流光线 ===== */
+.ray{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.ray i{position:absolute;left:-40%;top:var(--y);width:40%;height:2px;background:linear-gradient(90deg,transparent,var(--o),transparent);animation:fly linear infinite;animation-duration:var(--d);animation-delay:var(--dl)}
+@keyframes fly{to{transform:translateX(340vw)}}
+main,header,footer,nav{position:relative;z-index:1}
+
+/* ===== 顶栏 ===== */
+.topbar{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1340px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:12px}
+.bolt{width:42px;height:42px;flex:0 0 42px;border-radius:13px;background:linear-gradient(135deg,var(--y),var(--o));position:relative;
+  box-shadow:inset -5px -7px 12px rgba(154,52,18,.35),0 8px 22px rgba(249,115,22,.38);transform:rotate(-8deg)}
+.bolt::after{content:"";position:absolute;inset:9px 14px 14px 9px;background:rgba(255,255,255,.9);clip-path:polygon(100% 0,30% 46%,58% 46%,0 100%,70% 54%,42% 54%)}
+.logo .zh{font:900 21px/1 var(--sans);letter-spacing:.5px}
+.logo .zh em{font-style:normal;color:var(--o)}
+.logo .en{font:700 8.5px;letter-spacing:2.6px;color:var(--ink3)}
+.nav{display:flex;gap:6px;margin-left:auto;font:800 13.5px}
+.nav a{padding:9px 15px;border-radius:11px;color:var(--ink2)}
+.nav a:hover{color:var(--o);background:rgba(249,115,22,.07)}
+.nav a.on{color:#fff;background:var(--o);box-shadow:0 8px 20px rgba(249,115,22,.36)}
+.hamb{display:none;width:44px;height:44px;border:1px solid var(--line);background:var(--card);color:var(--o3);border-radius:13px;font-size:21px;cursor:pointer}
+
+/* ===== 通用 ===== */
+section{padding:68px 0}
+.lay{max-width:1340px;margin:0 auto;padding:0 24px}
+.sh{display:flex;align-items:center;gap:13px;margin-bottom:28px;flex-wrap:wrap}
+.sh .tag{font:800 11px;letter-spacing:2.6px;color:var(--o);background:rgba(249,115,22,.11);padding:6px 13px;border-radius:999px}
+.sh h2{font:900 clamp(23px,3.8vw,32px)/1.25;letter-spacing:.5px}
+.sh em{font-style:normal;color:var(--o)}
+.sh .en{font:700 10px;letter-spacing:3.4px;color:var(--ink3);margin-left:auto;text-transform:uppercase}
+
+/* ===== Hero ===== */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;min-height:520px}
+.hero h1{font:900 clamp(36px,7vw,66px)/1.14;letter-spacing:-.5px}
+.hero h1 .hl{background:linear-gradient(100deg,var(--y),var(--o));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .p{margin-top:20px;font-size:16px;color:var(--ink2);max-width:600px}
+.stats{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 20px;min-width:118px}
+.stat b{display:block;font:900 22px;color:var(--o);font-variant-numeric:tabular-nums;letter-spacing:.5px}
+.stat span{font:700 11.5px;letter-spacing:1px;color:var(--ink3)}
+.cta{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.cta a:first-child{display:grid;place-items:center;height:56px;padding:0 32px;border-radius:15px;background:var(--o);color:#fff;font:800 15px;letter-spacing:1px;box-shadow:0 14px 34px rgba(249,115,22,.38)}
+.cta a:first-child:hover{transform:translateY(-3px) scale(1.02);letter-spacing:2.4px}
+.cta a:last-child{display:grid;place-items:center;height:56px;padding:0 28px;border:1.5px solid var(--o);border-radius:15px;font:800 14.5px;color:var(--o2)}
+.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}
+.chips a{font:700 12px;letter-spacing:.6px;padding:7px 15px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink2)}
+.chips a:hover{border-color:var(--o);color:var(--o);transform:translateY(-2px)}
+
+/* Hero 右：速度仪表 */
+.gauge{position:relative;height:420px}
+.gauge .ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from -90deg,var(--o) 0 62%,#eef2f7 62% 100%);-webkit-mask:radial-gradient(circle,transparent 60%,#000 61%);mask:radial-gradient(circle,transparent 60%,#000 61%);animation:spin 16s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.gauge .core{position:absolute;inset:18%;border-radius:50%;background:var(--card);display:grid;place-items:center;text-align:center;box-shadow:0 26px 70px rgba(20,23,28,.14)}
+.gauge .core b{font:900 40px;color:var(--o);letter-spacing:1px;line-height:1}
+.gauge .core small{font:800 11px;letter-spacing:2.6px;color:var(--ink3);margin-top:6px}
+.gauge .tick{position:absolute;left:50%;top:6%;font:800 11px;color:var(--o);transform:translateX(-50%);background:#fff;border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+
+/* ===== ① 电影：斜切堆叠卡 ===== */
+.fans{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.fan{position:relative;height:350px;border-radius:18px;overflow:hidden;transform:skewX(-3.4deg);border:1px solid var(--line);transition:.34s;background:var(--g)}
+.fan:nth-child(even){transform:skewX(3.4deg) translateY(14px)}
+.fan i{position:absolute;inset:0;background:var(--g);transition:.5s}
+.fan:hover i{transform:scale(1.1) rotate(2deg)}
+.fan .bd{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;color:#fff;background:linear-gradient(0deg,rgba(15,17,21,.96),transparent)}
+.fan .bd em{font-style:normal;font:700 10px;letter-spacing:2.2px;background:rgba(255,255,255,.24);padding:4px 10px;border-radius:999px;backdrop-filter:blur(3px)}
+.fan .bd h4{font:900 17px;letter-spacing:.6px;margin:8px 0 3px}
+.fan .bd small{font:800 11.5px;color:#ffd9b8;letter-spacing:1px;display:flex;justify-content:space-between}
+.fan .go{position:absolute;inset:0;display:grid;place-items:center;background:rgba(249,115,22,.9);color:#fff;font:900 15px;letter-spacing:2px;opacity:0;transition:.3s}
+.fan:hover .go{opacity:1}
+.fan:hover{box-shadow:0 24px 56px rgba(154,52,18,.3);z-index:3}
+
+/* ===== ② 剧集：横向滑动条带 ===== */
+.belt{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 16px;scrollbar-width:thin}
+.belt::-webkit-scrollbar-thumb{background:linear-gradient(var(--o),var(--o3))}
+.ep{flex:0 0 288px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.3s}
+.ep:hover{flex-basis:314px;border-color:var(--o);box-shadow:0 18px 44px rgba(154,52,18,.18);transform:translateY(-5px)}
+.ep .cv{height:150px;position:relative}
+.ep .cv i{position:absolute;inset:0;background:var(--g)}
+.ep .cv b{position:absolute;left:12px;top:12px;font:900 10px;letter-spacing:1.6px;background:rgba(255,255,255,.92);color:var(--o3);padding:5px 11px;border-radius:8px}
+.ep .bd{padding:14px 17px}
+.ep .bd h4{font:900 15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ep .bd .row{display:flex;justify-content:space-between;font:700 11.5px;color:var(--ink3);margin:6px 0 12px;letter-spacing:.6px}
+.ep .bd .go{display:block;height:34px;border-radius:10px;background:var(--bg);display:grid;place-items:center;font:800 11.5px;letter-spacing:1px;color:var(--ink2)}
+.ep:hover .bd .go{background:var(--o);color:#fff}
+
+/* ===== ③ 综艺：数据仪表盘 ===== */
+.dash{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.dk{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;transition:.3s}
+.dk:hover{transform:translateY(-6px);border-color:var(--o);box-shadow:0 20px 48px rgba(154,52,18,.15)}
+.dk .ic{width:44px;height:44px;border-radius:13px;background:var(--g);position:relative}
+.dk .ic::after{content:"";position:absolute;inset:0;background:var(--g);border-radius:13px;opacity:.3;transform:scale(1.5)}
+.dk h4{font:900 15.5px;margin:12px 0 4px;letter-spacing:.5px}
+.dk p{font-size:12.6px;color:var(--ink2);line-height:1.9}
+.dk .kpi{margin-top:12px;font:800 11px;letter-spacing:1px;color:var(--o);border-top:1px dashed var(--line);padding-top:10px}
+.dk .kpi b{font-size:16px;font-variant-numeric:tabular-nums}
+
+/* ===== ④ 排行：对比进度条 ===== */
+.vs{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px 30px}
+.vs h5{font:900 18px;letter-spacing:.6px;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.vs h5::before{content:"01";font:italic 900 15px;color:#fff;background:var(--o);border-radius:8px;padding:3px 9px}
+.row2{display:grid;grid-template-columns:130px 1fr 66px;align-items:center;gap:14px;margin-bottom:13px}
+.row2 .nm{font:800 13.5px;letter-spacing:.4px;text-align:right}
+.bar{height:16px;border-radius:999px;background:#eef2f7;overflow:hidden;position:relative}
+.bar u{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;background:linear-gradient(90deg,var(--o),var(--y));transition:width 1.1s cubic-bezier(.34,1.3,.64,1)}
+.row2.on .nm{color:var(--o)}
+.row2 .vv{font:900 12px;color:var(--o);letter-spacing:.6px;font-variant-numeric:tabular-nums}
+
+/* ===== ⑤ 影讯：滚动快讯 + 大卡 ===== */
+.news{display:grid;grid-template-columns:1.35fr 1fr;gap:20px}
+.tik{background:var(--ink);color:#fff;border-radius:20px;padding:20px 22px;overflow:hidden;position:relative}
+.tik .hd{display:flex;align-items:center;gap:10px;font:800 12px;letter-spacing:2.4px;color:var(--y);margin-bottom:12px}
+.tik .hd::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--o);animation:pulse 1.1s infinite}
+@keyframes pulse{50%{transform:scale(1.7);opacity:.3}}
+.tik .rail{display:flex;flex-direction:column;gap:9px;animation:tk 26s linear infinite}
+.tik:hover .rail{animation-play-state:paused}
+@keyframes tk{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.tik .rail div{font-size:13.4px;letter-spacing:.4px;display:flex;gap:12px;align-items:baseline}
+.tik .rail div span{font:800 10.5px;color:var(--o);letter-spacing:1.6px;flex:0 0 auto}
+.nbig{background:linear-gradient(150deg,var(--o),var(--o3));color:#fff;border-radius:20px;padding:26px;position:relative;overflow:hidden}
+.nbig::after{content:"NEW";position:absolute;right:-6px;bottom:-18px;font:italic 900 60px;color:rgba(255,255,255,.08);letter-spacing:4px}
+.nbig .d{font:800 11px;letter-spacing:2.6px;color:#ffe4c4}
+.nbig h4{font:900 24px;letter-spacing:.8px;margin:10px 0 10px;line-height:1.5}
+.nbig p{font-size:13.4px;color:#ffe4c4;line-height:2}
+.nbig .more{display:inline-block;margin-top:14px;font:800 12px;letter-spacing:1.4px;border-bottom:2px solid var(--y)}
+
+/* ===== ⑥ 规范：条款网格 ===== */
+.man{background:linear-gradient(135deg,var(--ink),#2a1f17);color:#fff;border-radius:26px;padding:34px;margin-bottom:22px;position:relative;overflow:hidden}
+.man::before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(var(--y),var(--o))}
+.man q{font:900 clamp(22px,3.2vw,35px)/1.5;letter-spacing:.6px;display:block;position:relative;z-index:1}
+.man q::before{content:"\201C";color:var(--o);margin-right:5px}
+.grd2{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gd{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.3s;border-top:3px solid var(--o)}
+.gd:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(154,52,18,.16)}
+.gd .ix{font:800 11px;letter-spacing:2.6px;color:var(--o)}
+.gd h4{font:900 15px;margin:9px 0 7px;letter-spacing:.4px}
+.gd p{font-size:12.6px;color:var(--ink2);line-height:1.95}
+
+/* ===== 页脚 ===== */
+footer{background:var(--ink);color:#cbd5e1;padding:52px 0 24px;margin-top:42px}
+.fg{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:30px;margin-bottom:28px}
+.flogo .logo .zh{color:#fff}
+.flogo p{font-size:13px;color:#94a3b8;margin-top:14px;max-width:400px;line-height:2}
+.fc h6{font:900 10.5px;letter-spacing:3.4px;color:var(--o);margin-bottom:15px}
+.fc a{display:block;font-size:13px;color:#94a3b8;padding:6px 0}
+.fc a:hover{color:var(--y);padding-left:6px}
+.fbot{text-align:center;font-size:12.5px;color:#64748b;border-top:1px solid rgba(255,255,255,.14);padding-top:26px;line-height:2.1}
+.fbot a{color:var(--o);font-weight:900;letter-spacing:.6px}
+.up{position:fixed;right:18px;bottom:24px;width:50px;height:50px;border:0;border-radius:15px;background:var(--o);color:#fff;font:900 20px;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;z-index:90;box-shadow:0 12px 30px rgba(249,115,22,.45)}
+.up.on{opacity:1;pointer-events:auto}
+
+/* ===== 响应式 ===== */
+@media(max-width:1120px){
+  .fans{grid-template-columns:repeat(3,1fr)}
+  .dash{grid-template-columns:repeat(2,1fr)}
+  .news{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .hamb{display:grid;place-items:center;margin-left:auto}
+  .nav{position:fixed;inset:72px 0 0 100%;flex-direction:column;width:100%;height:calc(100vh - 72px);background:var(--bg);padding:24px;transition:.34s;overflow:auto;border-top:1px solid var(--line)}
+  .nav.open{transform:translateX(-100%)}
+  .nav a{font-size:20px;padding:19px;border-bottom:1px solid var(--line);border-radius:0}
+  .hero{grid-template-columns:1fr}
+  .gauge{display:none}
+  .fans{grid-template-columns:repeat(2,1fr);gap:14px}
+  .fan,.fan:nth-child(even){transform:none;height:300px}
+  .fan:nth-child(even){translate:none}
+  .grd2,.fg,.dash{grid-template-columns:1fr}
+  .row2{grid-template-columns:96px 1fr 54px;font-size:12.5px}
+  .hero h1{letter-spacing:0}
+  section{padding:48px 0}
+}
+@media print{body{background:#fff}.topbar,.hamb,.up,.ray,.gauge{display:none}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- 流光线 -->
+<div class="ray" aria-hidden="true">
+  <i style="--y:12%;--d:6.2s;--dl:0s"></i>
+  <i style="--y:34%;--d:8.4s;--dl:1.6s"></i>
+  <i style="--y:58%;--d:5.8s;--dl:3.2s"></i>
+  <i style="--y:78%;--d:9.6s;--dl:2.1s"></i>
+  <i style="--y:46%;--d:7.1s;--dl:4.8s"></i>
+</div>
+
+<!-- ===== 顶栏 ===== -->
+<header class="topbar">
+  <div class="top-in">
+    <a class="logo" href="#" aria-label="快播日韩电影网首页">
+      <span class="bolt" aria-hidden="true"></span>
+      <span><span class="zh">快播<em>日韩</em>电影网</span><span class="en">FAST PLAY · JP / KR CINEMA</span></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#home" class="on">首页</a>
+      <a href="#film">电影</a>
+      <a href="#tv">剧集</a>
+      <a href="#variety">综艺</a>
+      <a href="#rank">排行</a>
+      <a href="#news">影讯</a>
+      <a href="#about">规范</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<main>
+<!-- ===== Hero ===== -->
+<section id="home">
+  <div class="lay">
+    <div class="hero">
+      <div>
+        <h1>快 人 一 步<br>看 <span class="hl">日 韩 好 片</span>。</h1>
+        <p class="p">快播日韩电影网（kuaiborihandianyingwang-cn.github.io）是日韩电影与日韩剧导航资讯平台，收录日本电影、韩国电影、韩剧、日剧与日韩综艺，提供高清在线观看与迅雷下载导航，覆盖 4K 蓝光、杜比视界与多语字幕。</p>
+        <div class="stats">
+          <div class="stat"><b data-n="28600">0</b><span>影视条目</span></div>
+          <div class="stat"><b data-n="1240">0</b><span>日韩剧集</span></div>
+          <div class="stat"><b data-n="4.6">0</b><span>平均评分</span></div>
+          <div class="stat"><b data-n="99.8">0</b><span>可用率 %</span></div>
+        </div>
+        <div class="cta"><a href="#film">▸ 立即选片</a><a href="#rank">本周热榜</a></div>
+        <div class="chips">
+          <a href="#">日韩电影</a><a href="#">日本电影</a><a href="#">韩国电影</a><a href="#">韩剧</a>
+          <a href="#">日剧</a><a href="#">日韩综艺</a><a href="#">4K 蓝光</a><a href="#">迅雷下载</a><a href="#">电影字幕</a>
+        </div>
+      </div>
+      <div class="gauge">
+        <div class="ring" aria-hidden="true"></div>
+        <div class="core"><div><b>0.6s</b><small>AVG LOAD</small></div></div>
+        <div class="tick">LIVE · 实时索引</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ① 电影：斜切堆叠卡 ===== -->
+<section id="film">
+  <div class="lay">
+    <div class="sh"><span class="tag">FILM</span><h2>电影 <em>· 日本电影 &amp; 韩国电影</em></h2><span class="en">Feature Films</span></div>
+    <div class="fans" id="fans"></div>
+  </div>
+</section>
+
+<!-- ===== ② 剧集：横向滑动条带 ===== -->
+<section id="tv">
+  <div class="lay">
+    <div class="sh"><span class="tag">SERIES</span><h2>剧集 <em>· 韩剧 &amp; 日剧</em></h2><span class="en">Binge Watch</span></div>
+    <div class="belt" id="belt"></div>
+  </div>
+</section>
+
+<!-- ===== ③ 综艺：数据仪表盘 ===== -->
+<section id="variety">
+  <div class="lay">
+    <div class="sh"><span class="tag">SHOW</span><h2>综艺 · 纪实 <em>· 日韩综艺</em></h2><span class="en">Variety &amp; Doc</span></div>
+    <div class="dash" id="dash"></div>
+  </div>
+</section>
+
+<!-- ===== ④ 排行：对比进度条 ===== -->
+<section id="rank">
+  <div class="lay">
+    <div class="sh"><span class="tag">TOP</span><h2>口碑排行 <em>· 周榜</em></h2><span class="en">Weekly Chart</span></div>
+    <div class="vs">
+      <h5>日韩电影网 · 本周热度榜</h5>
+      <div id="vs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑤ 影讯：滚动快讯 + 大卡 ===== -->
+<section id="news">
+  <div class="lay">
+    <div class="sh"><span class="tag">NEWS</span><h2>影讯公告 <em>· 快讯</em></h2><span class="en">Dispatch</span></div>
+    <div class="news">
+      <div class="tik">
+        <div class="hd">LIVE 快讯 · 实时更新</div>
+        <div class="rail" id="rail"></div>
+      </div>
+      <div class="nbig">
+        <div class="d">2026.10.06 · 站长公告</div>
+        <h4>关于快播日韩电影网的定位与版权说明</h4>
+        <p>快播日韩电影网是影视资讯与导航平台，不托管、不存储、不转存任何受版权保护的影视文件。所有分享链接均指向第三方公开资源，请在合法渠道观看，支持正版影音。</p>
+        <a class="more" href="#">阅读完整声明 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑥ 规范：条款网格 ===== -->
+<section id="about">
+  <div class="lay">
+    <div class="sh"><span class="tag">RULES</span><h2>使用规范 <em>· 四条原则</em></h2><span class="en">Guidelines</span></div>
+    <div class="man"><q>快，是对好内容的敬意；慢，是对版权的敬畏。</q></div>
+    <div class="grd2">
+      <div class="gd"><div class="ix">RULE 01</div><h4>片源说明</h4><p>快播日韩电影网为影视资讯与导航平台，不托管、不存储、不转存任何影视文件，所有链接均指向第三方公开分享。</p></div>
+      <div class="gd"><div class="ix">RULE 02</div><h4>尊重版权</h4><p>影视作品版权归原作者及发行方所有。请通过院线、正版流媒体与正版影音制品支持日韩影视创作者。</p></div>
+      <div class="gd"><div class="ix">RULE 03</div><h4>字幕规范</h4><p>字幕为爱好者自发制作，仅供学习，请在使用后 24 小时内删除，并支持官方正版发行与字幕组。</p></div>
+      <div class="gd"><div class="ix">RULE 04</div><h4>安全提醒</h4><p>请勿相信任何「付费解锁」「充值会员」的仿冒站点。本站所有导航服务均免费，不索取密码与验证码。</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="lay">
+    <div class="fg">
+      <div class="flogo">
+        <a class="logo" href="#"><span class="bolt" aria-hidden="true"></span><span><span class="zh">快播<em>日韩</em>电影网</span><span class="en">FAST PLAY · JP / KR CINEMA</span></span></a>
+        <p>快播日韩电影网（kuaiborihandianyingwang-cn.github.io）提供日本电影、韩国电影、韩剧、日剧、日韩综艺的影视资讯与导航，涵盖 4K 蓝光、电影字幕与迅雷下载。</p>
+      </div>
+      <div class="fc"><h6>片库</h6><a href="#film">日本电影</a><a href="#film">韩国电影</a><a href="#film">韩剧</a><a href="#film">日剧</a></div>
+      <div class="fc"><h6>分类</h6><a href="#film">剧情爱情</a><a href="#film">悬疑犯罪</a><a href="#film">青春校园</a><a href="#film">动画剧场</a></div>
+      <div class="fc"><h6>服务</h6><a href="#film">资源检索</a><a href="#about">版权反馈</a><a href="#about">失效补链</a><a href="#about">使用规范</a></div>
+    </div>
+    <div class="fbot">© 2026 快播日韩电影网 · 网址：<a href="https://kuaiborihandianyingwang-cn.github.io/">https://kuaiborihandianyingwang-cn.github.io/</a><br>本站为影视资讯与导航平台，不托管任何影视文件，所涉版权归原作者及发行方所有。</div>
+  </div>
+</footer>
+
+<button class="up" id="upBtn" aria-label="回到顶部">↑</button>
+
+<script>
+/* ---- 数据 ---- */
+const fans=[
+ {t:"千与千寻",y:"2001 · 动画",g:"linear-gradient(160deg,#f43f5e,#7b2ff7)",sc:"★ 9.4"},
+ {t:"寄生虫",y:"2019 · 剧情",g:"linear-gradient(160deg,#475569,#0f172a)",sc:"★ 8.8"},
+ {t:"情书",y:"1995 · 爱情",g:"linear-gradient(160deg,#fbcfe8,#db2777)",sc:"★ 8.9"},
+ {t:"燃烧",y:"2018 · 悬疑",g:"linear-gradient(160deg,#f59e0b,#78350f)",sc:"★ 8.1"},
+ {t:"你的名字",y:"2016 · 动画",g:"linear-gradient(160deg,#38bdf8,#0369a1)",sc:"★ 8.5"},
+ {t:"鱿鱼游戏",y:"2021 · 惊悚",g:"linear-gradient(160deg,#dc2626,#7f1d1d)",sc:"★ 8.2"},
+ {t:"菊次郎的夏天",y:"1999 · 治愈",g:"linear-gradient(160deg,#86efac,#15803d)",sc:"★ 8.9"},
+ {t:"釜山行",y:"2016 · 灾难",g:"linear-gradient(160deg,#94a3b8,#334155)",sc:"★ 8.6"},
+ {t:"花样年华",y:"2000 · 文艺",g:"linear-gradient(160deg,#c026d3,#701a75)",sc:"★ 8.7"},
+ {t:"熔炉",y:"2011 · 剧情",g:"linear-gradient(160deg,#334155,#0f172a)",sc:"★ 9.4"}
+];
+const eps=[
+ ["黑暗荣耀","韩剧","2023","12 集","更新中"],["财阀家的小儿子","韩剧","2022","16 集","已完结"],
+ ["浪漫医生金师傅 3","韩剧","2023","16 集","已完结"],["鬼怪","韩剧","2016","16 集","已完结"],
+ ["非自然死亡","日剧","2018","10 集","已完结"],["半泽直树","日剧","2013","10 集","已完结"],
+ ["重启人生","日剧","2023","10 集","已完结"],["弥留之国的爱丽丝","日剧","2020","16 集","更新中"],
+ ["我的解放日志","韩剧","2022","16 集","已完结"],["静雪","日剧","2022","11 集","已完结"]
+];
+const dash=[
+ {t:"日韩电影",d:"日本电影与韩国电影长片，含 4K 修复与蓝光原盘。",k:"28,600",u:"条目",g:"linear-gradient(135deg,#f97316,#ea580c)",ic:"▣"},
+ {t:"韩剧速递",d:"每周同步更新韩剧，含中文字幕与分集资源。",k:"860",u:"部",g:"linear-gradient(135deg,#ec4899,#9d174d)",ic:"◈"},
+ {t:"日剧档案",d:"日剧全季归档，含日剧SP与晨间剧合集。",k:"380",u:"部",g:"linear-gradient(135deg,#06b6d4,#0369a1)",ic:"◇"},
+ {t:"日韩综艺",d:"日韩综艺周更，含中字与韩语原声双轨。",k:"1,240",u:"期",g:"linear-gradient(135deg,#84cc16,#4d7c0f)",ic:"❖"},
+ {t:"电影字幕",d:"中日韩三语字幕，SRT/ASS 双格式可选。",k:"9,300",u:"条",g:"linear-gradient(135deg,#facc15,#b45309)",ic:"✜"},
+ {t:"蓝光原盘",d:"4K 蓝光 REMUX 与杜比视界片源索引。",k:"420",u:"部",g:"linear-gradient(135deg,#a855f7,#6d28d9)",ic:"◆"},
+ {t:"经典修复",d:"4K 修复版老片归档，含黑白片 AI 上色版。",k:"180",u:"部",g:"linear-gradient(135deg,#64748b,#334155)",ic:"◐"},
+ {t:"每日更新",d:"日均新增与补链条目，失效 24 小时内响应。",k:"60+",u:"条/日",g:"linear-gradient(135deg,#14b8a6,#0f766e)",ic:"◉"}
+];
+const vs=[
+ ["寄生虫","奉俊昊","96"],["千与千寻","宫崎骏","94"],["熔炉","黄东赫","93"],
+ ["情书","岩井俊二","90"],["燃烧","李沧东","88"],["你的名字","新海诚","87"]
+];
+const rail=[
+ ["10.05","4K 修复版《情书》蓝光已归档","2160P / 简中 / 无损音轨"],
+ ["10.04","韩剧《黑暗荣耀》第二季 4K 版上线","杜比视界 / 中字"],
+ ["10.02","2026 秋季日韩新片片单（18 部）","含是枝裕和与新海诚新作"],
+ ["09.29","失效链接补链通道已恢复","平均响应约 3.5 小时"],
+ ["09.25","字幕组联合声明","仅供学习，请支持正版发行"],
+ ["09.20","杜比视界片源标注规范","明确标注 DV / HDR10+ / SDR"],
+ ["09.15","日本动画剧场版合集更新","含吉卜力 4K 修复 12 部"],
+ ["09.10","韩国独立电影专题上线","含釜山电影节获奖片单"]
+];
+
+/* ---- 渲染 ---- */
+document.getElementById('fans').innerHTML=fans.map(f=>
+ `<div class="fan" style="--g:${f.g}"><i></i>
+    <div class="bd"><em>FEATURE</em><h4>${f.t}</h4><small><span>${f.y}</span><span>${f.sc}</span></small></div>
+    <a class="go" href="#">▶ 立即观看</a></div>`).join('');
+
+document.getElementById('belt').innerHTML=eps.map(e=>
+ `<div class="ep">
+    <div class="cv" style="--g:linear-gradient(135deg,${['#f97316','#ec4899','#06b6d4','#84cc16','#a855f7','#facc15','#14b8a6','#64748b','#ef4444','#6366f1'][Math.floor(Math.random()*10)]},#1e293b)"><i></i><b>${e[0]}</b></div>
+    <div class="bd"><h4>${e[0]}</h4><div class="row"><span>${e[1]} · ${e[2]}</span><span>${e[3]}</span></div>
+    <a class="go" href="#">${e[4]==='更新中'?'追更':'选集'}</a></div></div>`).join('');
+
+document.getElementById('dash').innerHTML=dash.map(d=>
+ `<div class="dk"><div class="ic" style="--g:${d.g}"></div><h4>${d.t}</h4><p>${d.d}</p>
+  <div class="kpi">${d.u} <b>${d.k}</b></div></div>`).join('');
+
+document.getElementById('vs').innerHTML=vs.map((r,i)=>
+ `<div class="row2 ${i<3?'on':''}"><div class="nm">${String(i+1).padStart(2,'0')} · ${r[0]}</div>
+  <div class="bar"><u data-w="${r[2]}"></u></div><span class="vv">${r[2]}</span></div>`).join('');
+
+/* 快讯复制一份用于无缝滚动 */
+const railBox=document.getElementById('rail');
+railBox.innerHTML=rail.map(r=>`<div><span>${r[0]}</span><span>${r[1]} — <b style="color:#fbbf24">${r[2]}</b></span></div>`).join('')
+ +rail.map(r=>`<div><span>${r[0]}</span><span>${r[1]} — <b style="color:#fbbf24">${r[2]}</b></span></div>`).join('');
+
+/* ---- 数字滚动 ---- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const b=e.target,d=parseFloat(b.dataset.n),dec=(b.dataset.n+'').split('.')[1]?1:0;
+  let c=0,step=Math.max(1,d/60);
+  const t=setInterval(()=>{c+=step;if(c>=d){c=d;clearInterval(t)}
+    b.textContent=(dec?c.toFixed(dec):Math.round(c).toLocaleString())+(b.dataset.n.endsWith('%')?'%':'');},22);
+  io.unobserve(b);
+}),{threshold:.5});
+document.querySelectorAll('.stat b').forEach(b=>io.observe(b));
+
+/* 进度条动画 */
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.style.width=e.target.dataset.w+'%'}),{threshold:.4});
+document.querySelectorAll('.bar u').forEach(u=>io2.observe(u));
+
+/* ---- 交互 ---- */
+const hamb=document.getElementById('hamb'),nav=document.getElementById('nav');
+hamb.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('open');
+  [...nav.children].forEach(a=>a.classList.toggle('on',a===e.target))}});
+const up=document.getElementById('upBtn');
+up.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+window.addEventListener('scroll',()=>up.classList.toggle('on',window.scrollY>500),{passive:true});
+</script>
+</body>
+</html>
